@@ -1,0 +1,6 @@
+[package]
+name = "ternary-quantum"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Quantum-inspired computing with ternary states: qutrits, ternary Pauli operators, gates, entanglement, QFT over Z/3Z, Bell states"
