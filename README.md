@@ -123,6 +123,14 @@ The ternary CNOT (SUM gate) adds the control value to the target modulo 3, gener
 | `ternary-attention` | Uses similar matrix operations for classical attention mechanisms |
 | `ternary-bayesian` | Probabilistic ternary reasoning — classical analog of quantum amplitudes |
 
+## Known Limitations
+
+- **`measure()` is deterministic, not random.** The implementation uses a hardcoded `roll = 0.5` instead of a random number generator. Measurement always collapses the same way for a given state, making this unsuitable for quantum simulation requiring genuine stochastic collapse.
+- **No unitarity check on gates.** `Matrix3` does not verify that user-constructed gates are unitary. Non-physical gates can be created and applied without error.
+- **Maximum two qutrits.** There is no generalized n-qutrit system. All multi-qutrit operations are limited to `TwoQutrit` (9-dimensional state space).
+- **9×9 matrices have limited interface.** The `tensor` method produces `[[Complex; 9]; 9]` but there is no `Matrix9` type — you must use `TwoQutrit::apply` directly.
+- **No noise model or decoherence.** The simulation is noiseless; qutrit states remain perfectly coherent indefinitely.
+
 ## License
 
 MIT
