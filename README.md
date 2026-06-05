@@ -134,3 +134,11 @@ The ternary CNOT (SUM gate) adds the control value to the target modulo 3, gener
 ## License
 
 MIT
+
+## See Also
+- **ternary-circuit** — related
+- **ternary-hardware** — related
+- **ternary-logic** — related
+- **ternary-ring** — related
+- **ternary-tensor** — related
+
